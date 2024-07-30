@@ -1,8 +1,8 @@
 # DataBaseApp
-Package       
+Packages       
 ------------- 
 customtkinter 
 darkdetect    
 packaging     
-pip           
+          
 pyodbc        
