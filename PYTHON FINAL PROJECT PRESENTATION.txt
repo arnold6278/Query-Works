@@ -1,0 +1,53 @@
+**Import Statements**
+tkinter: Used for creating the GUI.
+ttk: Provides themed widget classes that inherit from tkinter widgets.
+messagebox: Provides a set of convenience functions for displaying message boxes.
+pyodbc: Python ODBC library for connecting to databases.
+
+#**Functions**#
+
+**connect_to_database Function:**
+Constructs a connection string using user-provided server, database, username, and password.
+Attempts to establish a connection using pyodbc.connect().
+Shows a success message (messagebox.showinfo) if the connection succeeds.
+Shows an error message (messagebox.showerror) if there's an pyodbc.Error.
+
+**fetch_data Function:**
+Takes a SQL query as input.
+Checks if there's an active connection.
+Executes the query using cursor.execute() and fetches the result (cursor.fetchall()).
+Returns columns (list of column names) and rows (list of fetched rows).
+Shows appropriate error messages if there's an issue with the query execution or no active connection.
+
+**display_data Function:**
+Clears the tree (Treeview widget) using tree.delete().
+If columns and rows are provided:
+Configures tree columns with columns.
+Inserts rows into tree with enumerate to number rows (text=str(i)).
+
+**main() Function:**
+Creates the main tkinter window (root) with a title, size (800x600), and initial background color (white).
+Sets up ttk.Style for consistent widget appearance.
+Defines a main frame (main_frame) within root to organize widgets.
+Creates labels (server_label, database_label, etc.) and entry widgets (server_entry, database_entry, etc.) for user input.
+Creates buttons (connect_button, execute_button, dark_mode_button) with associated commands (command=lambda: ...) to perform actions like connecting to the database (connect_database function).
+Uses root.mainloop() to start the tkinter event loop, which handles user interactions and updates the GUI accordingly.
+
+
+ **Other Functions and Features**
+
+**Toggle Dark Mode Function (toggle_dark_mode): Allows switching between light and dark themes (default and clam), updating the background color of root.
+**Connecting to Database Function (connect_database): Validates user input, attempts to connect to the database using connect_to_database, **and updates the connection status label (connection_label).
+**Executing Query Function (execute_query): Retrieves the SQL query from the text box (query_text), fetches data using fetch_data, and displays it in the Treeview (tree).
+7. **Error Handling and Status Bar
+Error Handling: Uses try-except blocks to catch and display errors when connecting to the database or executing queries (pyodbc.Error).
+**Status Bar: Displays a status bar (status_bar) at the bottom of the root window to indicate the current application state ("Ready" by default).
+
+			**SUMMARY**	
+
+This code provides a functional tkinter application for interacting with a SQL database:
+
+Users can input database connection details, execute SQL queries, and display query results in a Treeview widget.
+Error handling ensures robustness by notifying users of connection issues or query failures.
+The GUI layout is organized using frames and widgets (Label, Entry, Button, Treeview) within a main tkinter window (root).
+Styling (ttk.Style) and theme switching (toggle_dark_mode) provide a customizable user interface.
