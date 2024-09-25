@@ -5,4 +5,9 @@ customtkinter
 darkdetect    
 packaging     
           
-pyodbc        
+pyodbc  
+Pandas
+Searborn
+Plotly Express
+matPlotgLib
+
