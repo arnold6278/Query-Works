@@ -1,0 +1,6 @@
+customtkinter
+pyodbc
+pandas
+matplotlib
+seaborn
+reportlab
